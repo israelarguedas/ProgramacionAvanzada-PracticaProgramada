@@ -7,7 +7,7 @@
 <h2>ObtenerTodasLasHabitaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "RegistrarHabitaciones")
 </p>
 <table class="table">
     <tr>
@@ -95,9 +95,7 @@
             @Html.DisplayFor(modelItem => item.Estado)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "EditarHabitaciones", new { id=item.Id }) |
         </td>
     </tr>
 }
