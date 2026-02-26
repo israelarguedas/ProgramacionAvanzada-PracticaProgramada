@@ -189,8 +189,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Habitaciones\ObtenerTodasLasHabitaciones.cshtml" />
     <Content Include="Views\Habitaciones\RegistrarHabitaciones.cshtml" />
@@ -198,7 +196,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Reservaciones\" />
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +229,10 @@
     <ProjectReference Include="..\PracticaProgramadaSolucion.Abstracciones\PracticaProgramadaSolucion.Abstracciones.csproj">
       <Project>{a6ca5086-57dc-43a4-8f33-1bb9ef2de81e}</Project>
       <Name>PracticaProgramadaSolucion.Abstracciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PracticaProgramadaSolucion.LogicaDeNegocio\PracticaProgramadaSolucion.LogicaDeNegocio.csproj">
+      <Project>{C737DF10-3433-4FFB-A95A-DC63F7C668D7}</Project>
+      <Name>PracticaProgramadaSolucion.LogicaDeNegocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

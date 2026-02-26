@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6CA5086-57DC-43A4-8F33-1BB9EF2DE81E}</ProjectGuid>
+    <ProjectGuid>{C737DF10-3433-4FFB-A95A-DC63F7C668D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PracticaProgramadaSolucion.Abstracciones</RootNamespace>
-    <AssemblyName>PracticaProgramadaSolucion.Abstracciones</AssemblyName>
+    <RootNamespace>PracticaProgramadaSolucion.LogicaDeNegocio</RootNamespace>
+    <AssemblyName>PracticaProgramadaSolucion.LogicaDeNegocio</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,13 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogicaDeNegocio\General\Fechas\IFechasLN.cs" />
-    <Compile Include="LogicaDeNegocio\Habitaciones\IEditarHabitacionesLN.cs" />
-    <Compile Include="LogicaDeNegocio\Habitaciones\IObtenerTodasLasHabitacionesLN.cs" />
-    <Compile Include="LogicaDeNegocio\Habitaciones\IRegistrarHabitacionesLN.cs" />
-    <Compile Include="Modulos\Habitaciones\HabitacionesDto.cs" />
-    <Compile Include="Modulos\Reservaciones\ReservacionesDto.cs" />
+    <Compile Include="General\Fechas\FechasLN.cs" />
+    <Compile Include="Habitaciones\EditarHabitaciones\EditarHabitacionesLN.cs" />
+    <Compile Include="Habitaciones\ObtenerTodasLasHabitaciones\ObtenerTodasLasHabitacionesLN.cs" />
+    <Compile Include="Habitaciones\RegistrarHabitaciones\RegistrarHabitacionesLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PracticaProgramadaSolucion.Abstracciones\PracticaProgramadaSolucion.Abstracciones.csproj">
+      <Project>{A6CA5086-57DC-43A4-8F33-1BB9EF2DE81E}</Project>
+      <Name>PracticaProgramadaSolucion.Abstracciones</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reservaciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

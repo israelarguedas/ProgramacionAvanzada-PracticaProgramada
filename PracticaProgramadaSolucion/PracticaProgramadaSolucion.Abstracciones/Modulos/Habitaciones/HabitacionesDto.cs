@@ -19,15 +19,15 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones
         [Required]
         public string NombreDeHabitacion { get; set; }
         [Display(Name = "Cantidad de Huespuedes Permitidos")]
-        [MinLength(1)]
+        [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser al menos 1.")]
         [Required]
         public int CantidadDeHuespedesPermitidos { get; set; }
         [Display(Name = "Cantidad de Camas")]
-        [MinLength(1)]
+        [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser al menos 1.")]
         [Required]
         public int CantidadDeCamas { get; set; }
         [Display(Name = "Cantidad de Baños")]
-        [MinLength(1)]
+        [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser al menos 1.")]
         [Required]
         public int CantidadDeBanos { get; set; }
         [Display(Name = "Ubicación")]
@@ -39,15 +39,12 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones
         [Required]
         public string EncargadoDeLimpieza { get; set; }
         [Display(Name = "Tipo de Habitación")]
-        [MinLength(1)]
         [Required]
         public int TipoDeHabitacion { get; set; }
         [Display(Name = "Costo De Limpieza")]
-        [MinLength(2)]
         [Required]
         public decimal CostoDeLimpieza { get; set; }
         [Display(Name = "Costo De Reserva")]
-        [MinLength(2)]
         [Required]
         public decimal CostoDeReserva { get; set; }
         [Display(Name = "Fecha de Registro")]

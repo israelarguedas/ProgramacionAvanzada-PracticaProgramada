@@ -35,7 +35,6 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones
         [Required]
         public string Direccion { get; set; }
         [Display(Name = "Monto Total")]
-        [MinLength(4)]
         [Required]
         public decimal MontoTotal { get; set; }
         [Display(Name = "Fecha de Inicio de la Reserva")]
@@ -54,17 +53,3 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones
     }
 }
 
-/*
- Id int identity (1,1) not null,
-    NombreDeLaPersona varchar(150) not null,
-    Identificacion varchar(30) not null,
-	Telefono varchar(10) not null,
-	Correo varchar(50) not null,
-	FechaNacimiento datetime not null,
-	Direccion varchar(200) not null,
-	MontoTotal decimal(18,2) not null,
-	FechaInicioReserva datetime not null,
-	FechaFinReserva datetime not null,
-	FechaDeRegistro datetime not null,
-	IdHabitacion int not null,
- */

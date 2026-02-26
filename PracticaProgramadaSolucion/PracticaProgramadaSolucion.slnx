@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="PracticaProgramadaSolucion.Abstracciones/PracticaProgramadaSolucion.Abstracciones.csproj" Id="a6ca5086-57dc-43a4-8f33-1bb9ef2de81e" />
+  <Project Path="PracticaProgramadaSolucion.LogicaDeNegocio/PracticaProgramadaSolucion.LogicaDeNegocio.csproj" Id="c737df10-3433-4ffb-a95a-dc63f7c668d7" />
   <Project Path="PracticaProgramadaSolucion.UI/PracticaProgramadaSolucion.UI.csproj" Id="c341009b-ed23-4216-8ea3-fb823cb83a99" />
 </Solution>
