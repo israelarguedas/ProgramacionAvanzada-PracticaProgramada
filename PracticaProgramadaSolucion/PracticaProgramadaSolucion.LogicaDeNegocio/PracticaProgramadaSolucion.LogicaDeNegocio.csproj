@@ -53,6 +53,10 @@
       <Project>{A6CA5086-57DC-43A4-8F33-1BB9EF2DE81E}</Project>
       <Name>PracticaProgramadaSolucion.Abstracciones</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PracticaProgramadaSolucion.AccesoADatos\PracticaProgramadaSolucion.AccesoADatos.csproj">
+      <Project>{CA370BAA-9856-4C7F-BDFF-399D0E0110FE}</Project>
+      <Name>PracticaProgramadaSolucion.AccesoADatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reservaciones\" />

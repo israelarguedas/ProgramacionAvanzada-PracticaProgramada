@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoADatos\Habitaciones\IEditarHabitacionesAD.cs" />
+    <Compile Include="AccesoADatos\Habitaciones\IObtenerTodasLasHabitacionesAD.cs" />
+    <Compile Include="AccesoADatos\Habitaciones\IRegistrarHabitacionesAD.cs" />
     <Compile Include="LogicaDeNegocio\General\Fechas\IFechasLN.cs" />
     <Compile Include="LogicaDeNegocio\Habitaciones\IEditarHabitacionesLN.cs" />
     <Compile Include="LogicaDeNegocio\Habitaciones\IObtenerTodasLasHabitacionesLN.cs" />
@@ -49,6 +52,9 @@
     <Compile Include="Modulos\Habitaciones\HabitacionesDto.cs" />
     <Compile Include="Modulos\Reservaciones\ReservacionesDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AccesoADatos\Reservaciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

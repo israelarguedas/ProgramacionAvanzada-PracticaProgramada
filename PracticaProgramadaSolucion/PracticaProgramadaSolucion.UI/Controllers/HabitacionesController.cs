@@ -52,7 +52,7 @@ namespace PracticaProgramadaSolucion.UI.Controllers
         {
             try
             {
-                bool seRegistro = _registrarHabitaciones.Agregar(laHabitacionARegistrar);
+                bool seRegistro = _registrarHabitaciones.Registrar(laHabitacionARegistrar);
 
                 if (seRegistro)
                 {

@@ -1,55 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones
+namespace PracticaProgramadaSolucion.AccesoADatos.Entidades
 {
-	public class ReservacionesDto
-	{
-		public int Id { get; set; }
-        [Display(Name = "Nombre de la Persona")]
-        [MinLength(4)]
-        [Required]
+    [Table("RESERVACIONES")]
+    public class ReservacionesEntidad
+    {
+        [Column("Id")]
+        public int Id { get; set; }
+        [Column("NombreDeLaPersona")]
         public string NombreDeLaPersona { get; set; }
-        [Display(Name = "Identificación")]
-        [MinLength(4)]
-        [Required]
+        [Column("Identificacion")]
         public string Identificacion { get; set; }
-        [Display(Name = "Telefóno")]
-        [MinLength(4)]
-        [Required]
+        [Column("Telefono")]
         public string Telefono { get; set; }
-        [Display(Name = "Correo Electrónico")]
-        [MinLength(4)]
-        [Required]
+        [Column("Correo")]
         public string Correo { get; set; }
-        [Display(Name = "Fecha de Nacimiento")]
-        [MinLength(4)]
-        [Required]
+        [Column("FechaNacimiento")]
         public DateTime FechaNacimiento { get; set; }
-        [Display(Name = "Dirección")]
-        [MinLength(4)]
-        [Required]
+        [Column("Direccion")]
         public string Direccion { get; set; }
-        [Display(Name = "Monto Total")]
-        [Required]
+        [Column("MontoTotal")]
         public decimal MontoTotal { get; set; }
-        [Display(Name = "Fecha de Inicio de la Reserva")]
-        [Required]
+        [Column("FechaInicioReserva")]
         public DateTime FechaInicioReserva { get; set; }
-        [Display(Name = "Fecha de Finalización de la Reserva")]
-        [Required]
+        [Column("FechaFinReserva")]
         public DateTime FechaFinReserva { get; set; }
-        [Display(Name = "Fecha de Registro")]
-        [Required]
+        [Column("FechaDeRegistro")]
         public DateTime FechaDeRegistro { get; set; }
-        [Display(Name = "ID de la Habitación")]
-        [Required]
+        [Column("IdHabitacion")]
         public int IdHabitacion { get; set; }
-
     }
 }
 

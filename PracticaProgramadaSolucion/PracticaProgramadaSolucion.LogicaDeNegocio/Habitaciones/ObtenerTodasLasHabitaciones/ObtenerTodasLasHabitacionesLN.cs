@@ -1,5 +1,7 @@
-﻿using PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Habitaciones;
+﻿using PracticaProgramadaSolucion.Abstracciones.AccesoADatos.Habitaciones;
+using PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Habitaciones;
 using PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones;
+using PracticaProgramadaSolucion.AccesoADatos.Habitaciones.ObtenerTodasLasHabitaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,26 +12,15 @@ namespace PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.ObtenerTodasLa
 {
     public class ObtenerTodasLasHabitacionesLN : IObtenerTodasLasHabitacionesLN
     {
+        IObtenerTodasLasHabitacionesAD _obtenerTodasLasHabitaciones;
+        public ObtenerTodasLasHabitacionesLN()
+        {
+            _obtenerTodasLasHabitaciones = new ObtenerTodasLasHabitacionesAD();
+        }
         public List<HabitacionesDto> Obtener() {
 
-            List<HabitacionesDto> listaHabitaciones = new List<HabitacionesDto>();
-
-            listaHabitaciones.Add(new HabitacionesDto
-            {
-                Id = 1,
-                CodigoDeHabitacion = "HAB001",
-                NombreDeHabitacion = "Habitación Deluxe",
-                CantidadDeHuespedesPermitidos = 2,
-                CantidadDeCamas = 1,
-                CantidadDeBanos = 1,
-                Ubicacion = "Piso 3",
-                EncargadoDeLimpieza = "Juan Pérez",
-                TipoDeHabitacion = 1,
-                CostoDeLimpieza = 50.00m,
-                CostoDeReserva = 200.00m,
-                FechaDeRegistro = DateTime.Now,
-                Estado = true
-            });
+            List<HabitacionesDto> listaHabitaciones = _obtenerTodasLasHabitaciones.Obtener();
+            listaHabitaciones = listaHabitaciones.OrderBy(habitacion => habitacion.NombreDeHabitacion).ToList();
 
             return listaHabitaciones;
         }

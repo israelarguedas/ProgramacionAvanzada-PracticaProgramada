@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Habitaciones
+namespace PracticaProgramadaSolucion.Abstracciones.AccesoADatos.Habitaciones
 {
-    public interface IRegistrarHabitacionesLN
+    public interface IRegistrarHabitacionesAD
     {
-        bool Registrar(HabitacionesDto laHabitacionARegitrar);
+        int Registrar(HabitacionesDto habitacion);
     }
 }
