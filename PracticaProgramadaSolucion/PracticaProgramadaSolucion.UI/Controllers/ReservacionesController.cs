@@ -1,6 +1,8 @@
-﻿using PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Reservaciones;
+﻿using PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Habitaciones;
+using PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Reservaciones;
 using PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones;
 using PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones;
+using PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.ObtenerHabitacionesPorID;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Reservaciones.BuscarReserva;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Reservaciones.ObtenerTodasLasHabitacionesDisponibles;
 using System;
@@ -15,11 +17,13 @@ namespace PracticaProgramadaSolucion.UI.Controllers
     {
         IObtenerTodasLasHabitacionesDisponiblesLN _obtenerTodasLasHabitacionesDisponiblesLN;
         IBuscarReservaLN _buscarReserva;
+        IObtenerHabitacionesPorIDLN _obtenerHabitacionesPorID;
 
         public ReservacionesController()
         {
             _obtenerTodasLasHabitacionesDisponiblesLN = new ObtenerTodasLasHabitacionesDisponiblesLN();
             _buscarReserva = new BuscarReservaLN();
+            _obtenerHabitacionesPorID = new ObtenerHabitacionesPorIDLN();
         }
 
 
@@ -39,14 +43,15 @@ namespace PracticaProgramadaSolucion.UI.Controllers
         }
 
         // GET: Reservaciones/CrearReserva
-        public ActionResult CrearReserva()
+        public ActionResult CrearReserva(int id)
         {
-            return View();
+            HabitacionesDto laHabitacionAReservar = _obtenerHabitacionesPorID.Obtener(id);
+            return View(laHabitacionAReservar);
         }
 
         // POST: Reservaciones/CrearReserva
         [HttpPost]
-        public ActionResult CrearReserva(FormCollection collection)
+        public ActionResult CrearReserva(int id, ReservacionesDto nuevaReserva)
         {
             try
             {

@@ -203,6 +203,7 @@
     <Content Include="Views\Habitaciones\ObtenerHistorialDeReservas.cshtml" />
     <Content Include="Views\Reservaciones\ObtenerTodasLasHabitacionesDisponibles.cshtml" />
     <Content Include="Views\Reservaciones\BuscarReserva.cshtml" />
+    <Content Include="Views\Reservaciones\CrearReserva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
