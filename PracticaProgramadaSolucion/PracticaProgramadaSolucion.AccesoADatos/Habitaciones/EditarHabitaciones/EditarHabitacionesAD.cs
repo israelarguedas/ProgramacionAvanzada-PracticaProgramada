@@ -31,7 +31,6 @@ namespace PracticaProgramadaSolucion.AccesoADatos.Habitaciones.EditarHabitacione
                 habitacionesEnBD.TipoDeHabitacion = habitacionAEditar.TipoDeHabitacion;
                 habitacionesEnBD.CostoDeLimpieza = habitacionAEditar.CostoDeLimpieza;
                 habitacionesEnBD.CostoDeReserva = habitacionAEditar.CostoDeReserva;
-                habitacionesEnBD.FechaDeModificacion = DateTime.Now;
                 habitacionesEnBD.Estado = habitacionAEditar.Estado;
                 return _elContexto.SaveChanges();
             }

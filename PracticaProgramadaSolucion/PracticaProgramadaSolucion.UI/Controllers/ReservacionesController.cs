@@ -4,6 +4,7 @@ using PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones;
 using PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.ObtenerHabitacionesPorID;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Reservaciones.BuscarReserva;
+using PracticaProgramadaSolucion.LogicaDeNegocio.Reservaciones.CrearReserva;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Reservaciones.ObtenerTodasLasHabitacionesDisponibles;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,14 @@ namespace PracticaProgramadaSolucion.UI.Controllers
         IObtenerTodasLasHabitacionesDisponiblesLN _obtenerTodasLasHabitacionesDisponiblesLN;
         IBuscarReservaLN _buscarReserva;
         IObtenerHabitacionesPorIDLN _obtenerHabitacionesPorID;
+        ICrearReservaLN _crearReserva;
 
         public ReservacionesController()
         {
             _obtenerTodasLasHabitacionesDisponiblesLN = new ObtenerTodasLasHabitacionesDisponiblesLN();
             _buscarReserva = new BuscarReservaLN();
             _obtenerHabitacionesPorID = new ObtenerHabitacionesPorIDLN();
+            _crearReserva = new CrearReservaLN();
         }
 
 
@@ -42,11 +45,17 @@ namespace PracticaProgramadaSolucion.UI.Controllers
             return View(ReservaExistente);
         }
 
-        // GET: Reservaciones/CrearReserva
+        // GET: Reservaciones/CrearReserva/5
         public ActionResult CrearReserva(int id)
         {
-            HabitacionesDto laHabitacionAReservar = _obtenerHabitacionesPorID.Obtener(id);
-            return View(laHabitacionAReservar);
+            // Create and pass a ReservacionesDto because the CrearReserva view is strongly typed to ReservacionesDto
+            var nuevaReserva = new ReservacionesDto
+            {
+                IdHabitacion = id,
+                FechaDeRegistro = DateTime.Now
+                // set other defaults if desired
+            };
+            return View(nuevaReserva);
         }
 
         // POST: Reservaciones/CrearReserva
@@ -55,13 +64,20 @@ namespace PracticaProgramadaSolucion.UI.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                bool seRegistro = _crearReserva.CrearReserva(id, nuevaReserva);
 
-                return RedirectToAction("Index");
+                if (seRegistro)
+                {
+                    return RedirectToAction("ObtenerTodasLasHabitacionesDisponibles");
+                }
+                else
+                {
+                    return View(nuevaReserva);
+                }
             }
             catch
             {
-                return View();
+                return View(nuevaReserva);
             }
         }
     }

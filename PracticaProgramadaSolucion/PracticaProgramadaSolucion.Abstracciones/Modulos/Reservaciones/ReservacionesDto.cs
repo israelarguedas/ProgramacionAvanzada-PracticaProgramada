@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones
 {
-	public class ReservacionesDto
+	public class ReservacionesDto 
 	{
 		public int Id { get; set; }
         [Display(Name = "Nombre de la Persona")]
@@ -27,8 +27,8 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones
         [Required]
         public string Correo { get; set; }
         [Display(Name = "Fecha de Nacimiento")]
-        [MinLength(4)]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime FechaNacimiento { get; set; }
         [Display(Name = "Dirección")]
         [MinLength(4)]
@@ -39,9 +39,11 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones
         public decimal MontoTotal { get; set; }
         [Display(Name = "Fecha de Inicio de la Reserva")]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime FechaInicioReserva { get; set; }
         [Display(Name = "Fecha de Finalización de la Reserva")]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime FechaFinReserva { get; set; }
         [Display(Name = "Fecha de Registro")]
         [Required]
@@ -49,8 +51,9 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones
         [Display(Name = "ID de la Habitación")]
         [Required]
         public int IdHabitacion { get; set; }
-
     }
+
+
 }
 
 /*
