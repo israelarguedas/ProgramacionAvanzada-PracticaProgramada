@@ -55,9 +55,13 @@
     <Compile Include="Entidades\HabitacionesEntidad.cs" />
     <Compile Include="Entidades\ReservacionesEntidad.cs" />
     <Compile Include="Habitaciones\EditarHabitaciones\EditarHabitacionesAD.cs" />
+    <Compile Include="Habitaciones\ObtenerHabitacionesPorID\ObtenerHabitacionesPorIDAD.cs" />
+    <Compile Include="Habitaciones\ObtenerHistorialDeReservas\ObtenerHistorialDeReservasAD.cs" />
     <Compile Include="Habitaciones\ObtenerTodasLasHabitaciones\ObtenerTodasLasHabitacionesAD.cs" />
     <Compile Include="Habitaciones\RegistrarHabitaciones\RegistrarHabitacionesAD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservaciones\BuscarReserva\BuscarReservaAD.cs" />
+    <Compile Include="Reservaciones\ObtenerTodasLasHabitacionesDisponibles\ObtenerTodasLasHabitacionesDisponiblesAD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

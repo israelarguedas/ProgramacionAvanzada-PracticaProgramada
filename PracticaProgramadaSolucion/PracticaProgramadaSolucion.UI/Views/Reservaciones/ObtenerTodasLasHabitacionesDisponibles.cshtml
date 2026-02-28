@@ -1,0 +1,79 @@
+﻿@model IEnumerable<PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones.HabitacionesDto>
+
+@{
+    ViewBag.Title = "ObtenerTodasLasHabitacionesDisponibles";
+}
+
+<h2>Buscar Reservaciones</h2>
+
+<!-- Search form: sends GET to ReservacionesController.BuscarReserva(int id) -->
+<form action="@Url.Action("BuscarReserva", "Reservaciones")" method="get" class="form-inline" style="margin-bottom:15px;">
+    <div class="form-group">
+        <label for="id" style="margin-bottom:10px;">Buscar Reserva por ID</label>
+        <input type="number" name="id" id="id" class="form-control" placeholder="Enter ID" required />
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary" style="margin-top:20px;">Buscar</button>
+    </div>
+</form>
+
+<h2>Habitaciones Disponibles</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreDeHabitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadDeHuespedesPermitidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadDeCamas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadDeBanos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoDeReserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeHabitacion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDeHabitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadDeHuespedesPermitidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadDeCamas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadDeBanos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ubicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoDeReserva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDeHabitacion)
+            </td>
+            <td>
+                @Html.ActionLink("Reservar", "CrearReserva", new { id = item.Id }) |
+            </td>
+        </tr>
+    }
+
+</table>
+

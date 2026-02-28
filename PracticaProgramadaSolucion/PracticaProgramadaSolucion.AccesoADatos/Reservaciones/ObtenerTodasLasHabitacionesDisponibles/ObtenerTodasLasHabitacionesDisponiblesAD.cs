@@ -1,4 +1,4 @@
-﻿using PracticaProgramadaSolucion.Abstracciones.AccesoADatos.Habitaciones;
+﻿using PracticaProgramadaSolucion.Abstracciones.AccesoADatos.Reservaciones;
 using PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones;
 using System;
 using System.Collections.Generic;
@@ -6,36 +6,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticaProgramadaSolucion.AccesoADatos.Habitaciones.ObtenerTodasLasHabitaciones
+namespace PracticaProgramadaSolucion.AccesoADatos.Reservaciones
 {
-    public class ObtenerTodasLasHabitacionesAD : IObtenerTodasLasHabitacionesAD
+    public class ObtenerTodasLasHabitacionesDisponiblesAD : IObtenerTodasLasHabitacionesDisponiblesAD
     {
         Contexto _elContexto;
-        public ObtenerTodasLasHabitacionesAD()
+        public ObtenerTodasLasHabitacionesDisponiblesAD()
         {
             _elContexto = new Contexto();
         }
 
-        public List<HabitacionesDto> Obtener()
-        {
+        public List<HabitacionesDto> ObtenerHabitacionesDisponibles() {
             List<HabitacionesDto> listaHabitaciones = (from habitacionesEnBD
                                                        in _elContexto.Habitaciones
+                                                       where habitacionesEnBD.Estado == true
                                                        select new HabitacionesDto
                                                        {
                                                            Id = habitacionesEnBD.Id,
-                                                           CodigoDeHabitacion = habitacionesEnBD.CodigoDeHabitacion,
                                                            NombreDeHabitacion = habitacionesEnBD.NombreDeHabitacion,
-                                                           Ubicacion = habitacionesEnBD.Ubicacion,
                                                            CantidadDeHuespedesPermitidos = habitacionesEnBD.CantidadDeHuespedesPermitidos,
                                                            CantidadDeCamas = habitacionesEnBD.CantidadDeCamas,
                                                            CantidadDeBanos = habitacionesEnBD.CantidadDeBanos,
-                                                           EncargadoDeLimpieza = habitacionesEnBD.EncargadoDeLimpieza,
-                                                           CostoDeLimpieza = habitacionesEnBD.CostoDeLimpieza,
+                                                           Ubicacion = habitacionesEnBD.Ubicacion,
                                                            CostoDeReserva = habitacionesEnBD.CostoDeReserva,
                                                            TipoDeHabitacion = habitacionesEnBD.TipoDeHabitacion,
                                                            Estado = habitacionesEnBD.Estado
                                                        }).ToList();
             return listaHabitaciones;
-        }    
+        }
     }
 }

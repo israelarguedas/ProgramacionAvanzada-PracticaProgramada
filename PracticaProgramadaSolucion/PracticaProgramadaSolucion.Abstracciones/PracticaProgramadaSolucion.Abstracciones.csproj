@@ -52,19 +52,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoADatos\Habitaciones\IEditarHabitacionesAD.cs" />
+    <Compile Include="AccesoADatos\Habitaciones\IObtenerHabitacionesPorIDAD.cs" />
+    <Compile Include="AccesoADatos\Habitaciones\IObtenerHistorialDeReservasAD.cs" />
     <Compile Include="AccesoADatos\Habitaciones\IObtenerTodasLasHabitacionesAD.cs" />
     <Compile Include="AccesoADatos\Habitaciones\IRegistrarHabitacionesAD.cs" />
+    <Compile Include="AccesoADatos\Reservaciones\IBuscarReservaAD.cs" />
+    <Compile Include="AccesoADatos\Reservaciones\IObtenerTodasLasHabitacionesDisponiblesAD.cs" />
     <Compile Include="LogicaDeNegocio\General\Fechas\IFechasLN.cs" />
     <Compile Include="LogicaDeNegocio\Habitaciones\IEditarHabitacionesLN.cs" />
+    <Compile Include="LogicaDeNegocio\Habitaciones\IObtenerHabitacionesPorIDLN.cs" />
+    <Compile Include="LogicaDeNegocio\Habitaciones\IObtenerHistorialDeReservasLN.cs" />
     <Compile Include="LogicaDeNegocio\Habitaciones\IObtenerTodasLasHabitacionesLN.cs" />
     <Compile Include="LogicaDeNegocio\Habitaciones\IRegistrarHabitacionesLN.cs" />
+    <Compile Include="LogicaDeNegocio\Reservaciones\IBuscarReservaLN.cs" />
+    <Compile Include="LogicaDeNegocio\Reservaciones\IObtenerTodasLasHabitacionesDisponiblesLN.cs" />
     <Compile Include="Modulos\Habitaciones\HabitacionesDto.cs" />
     <Compile Include="Modulos\Reservaciones\ReservacionesDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AccesoADatos\Reservaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

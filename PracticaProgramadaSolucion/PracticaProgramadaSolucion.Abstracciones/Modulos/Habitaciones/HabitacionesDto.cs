@@ -42,9 +42,11 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones
         [Required]
         public int TipoDeHabitacion { get; set; }
         [Display(Name = "Costo De Limpieza")]
+        [Range(1, (double)decimal.MaxValue, ErrorMessage = "Debe ser mayor a 0")]
         [Required]
         public decimal CostoDeLimpieza { get; set; }
         [Display(Name = "Costo De Reserva")]
+        [Range(1, (double)decimal.MaxValue, ErrorMessage = "Debe ser mayor a 0")]
         [Required]
         public decimal CostoDeReserva { get; set; }
         [Display(Name = "Fecha de Registro")]
@@ -57,19 +59,3 @@ namespace PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones
     }
 }
 
-/*
-    Id int identity (1,1) not null,
-    CodigoDeHabitacion varchar(7) not null,
-    NombreDeHabitacion varchar(30) not null,
-	CantidadDeHuespedesPermitidos int not null,
-	CantidadDeCamas int not null,
-	CantidadDeBanos int not null,
-	Ubicacion varchar(10) not null,
-	EncargadoDeLimpieza varchar(100) not null,
-	TipoDeHabitacion int not null,
-	CostoDeLimpieza decimal(18,2) not null,
-	CostoDeReserva decimal(18,2) not null,
-	FechaDeRegistro datetime not null,
-	FechaDeModificacion datetime,
-	Estado bit,
-*/

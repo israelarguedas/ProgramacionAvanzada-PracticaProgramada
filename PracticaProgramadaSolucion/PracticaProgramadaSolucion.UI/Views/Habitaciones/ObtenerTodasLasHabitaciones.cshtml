@@ -4,10 +4,10 @@
     ViewBag.Title = "ObtenerTodasLasHabitaciones";
 }
 
-<h2>ObtenerTodasLasHabitaciones</h2>
+<h2>Habitaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "RegistrarHabitaciones")
+    @Html.ActionLink("Registrar Nueva Habitación", "RegistrarHabitaciones")
 </p>
 <table class="table">
     <tr>
@@ -16,6 +16,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NombreDeHabitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CantidadDeHuespedesPermitidos)
@@ -27,13 +30,7 @@
             @Html.DisplayNameFor(model => model.CantidadDeBanos)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ubicacion)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.EncargadoDeLimpieza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoDeHabitacion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CostoDeLimpieza)
@@ -42,10 +39,7 @@
             @Html.DisplayNameFor(model => model.CostoDeReserva)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FechaDeRegistro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaDeModificacion)
+            @Html.DisplayNameFor(model => model.TipoDeHabitacion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Estado)
@@ -62,6 +56,9 @@
             @Html.DisplayFor(modelItem => item.NombreDeHabitacion)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Ubicacion)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.CantidadDeHuespedesPermitidos)
         </td>
         <td>
@@ -71,13 +68,7 @@
             @Html.DisplayFor(modelItem => item.CantidadDeBanos)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ubicacion)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.EncargadoDeLimpieza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoDeHabitacion)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CostoDeLimpieza)
@@ -86,16 +77,14 @@
             @Html.DisplayFor(modelItem => item.CostoDeReserva)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FechaDeRegistro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaDeModificacion)
+            @Html.DisplayFor(modelItem => item.TipoDeHabitacion)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Estado)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditarHabitaciones", new { id=item.Id }) |
+            @Html.ActionLink("Editar", "EditarHabitaciones", new { id = item.Id }) |
+            @Html.ActionLink("Ver Reservas", "ObtenerHistorialDeReservas", new { id = item.Id })
         </td>
     </tr>
 }

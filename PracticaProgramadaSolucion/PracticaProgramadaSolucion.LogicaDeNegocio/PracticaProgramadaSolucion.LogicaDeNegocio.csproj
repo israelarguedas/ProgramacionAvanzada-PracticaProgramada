@@ -54,9 +54,13 @@
   <ItemGroup>
     <Compile Include="General\Fechas\FechasLN.cs" />
     <Compile Include="Habitaciones\EditarHabitaciones\EditarHabitacionesLN.cs" />
+    <Compile Include="Habitaciones\ObtenerHabitacionesPorID\ObtenerHabitacionesPorIDLN.cs" />
+    <Compile Include="Habitaciones\ObtenerHistorialDeReservas\ObtenerHistorialDeReservasLN.cs" />
     <Compile Include="Habitaciones\ObtenerTodasLasHabitaciones\ObtenerTodasLasHabitacionesLN.cs" />
     <Compile Include="Habitaciones\RegistrarHabitaciones\RegistrarHabitacionesLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservaciones\BuscarReserva\BuscarReservaLN.cs" />
+    <Compile Include="Reservaciones\ObtenerTodasLasHabitacionesDisponibles\ObtenerTodasLasHabitacionesDisponiblesLN.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PracticaProgramadaSolucion.Abstracciones\PracticaProgramadaSolucion.Abstracciones.csproj">
@@ -68,9 +72,7 @@
       <Name>PracticaProgramadaSolucion.AccesoADatos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reservaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

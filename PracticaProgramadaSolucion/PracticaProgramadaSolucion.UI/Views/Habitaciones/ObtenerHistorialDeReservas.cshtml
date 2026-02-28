@@ -1,0 +1,78 @@
+﻿@model IEnumerable<PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones.ReservacionesDto>
+
+@{
+    ViewBag.Title = "ObtenerHistorialDeReservas";
+}
+
+<h2>Obtener Historial De Reservas</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreDeLaPersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MontoTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicioReserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFinReserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDeRegistro)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDeLaPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Identificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicioReserva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFinReserva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaDeRegistro)
+            </td>
+        </tr>
+    }
+
+    <div>
+        @Html.ActionLink("Regresar", "ObtenerTodasLasHabitaciones")
+    </div>
+
+</table>

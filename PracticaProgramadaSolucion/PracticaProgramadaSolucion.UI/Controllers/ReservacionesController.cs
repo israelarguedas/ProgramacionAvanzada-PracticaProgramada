@@ -1,4 +1,9 @@
-﻿using System;
+﻿using PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Reservaciones;
+using PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones;
+using PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones;
+using PracticaProgramadaSolucion.LogicaDeNegocio.Reservaciones.BuscarReserva;
+using PracticaProgramadaSolucion.LogicaDeNegocio.Reservaciones.ObtenerTodasLasHabitacionesDisponibles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,75 +13,44 @@ namespace PracticaProgramadaSolucion.UI.Controllers
 {
     public class ReservacionesController : Controller
     {
-        // GET: Reservaciones
-        public ActionResult Index()
+        IObtenerTodasLasHabitacionesDisponiblesLN _obtenerTodasLasHabitacionesDisponiblesLN;
+        IBuscarReservaLN _buscarReserva;
+
+        public ReservacionesController()
+        {
+            _obtenerTodasLasHabitacionesDisponiblesLN = new ObtenerTodasLasHabitacionesDisponiblesLN();
+            _buscarReserva = new BuscarReservaLN();
+        }
+
+
+        // GET: Reservaciones/ObtenerTodasLasHabitacionesDisponibles
+        public ActionResult ObtenerTodasLasHabitacionesDisponibles()
+        {
+            List<HabitacionesDto> listaHabitacionesDisponibles = _obtenerTodasLasHabitacionesDisponiblesLN.ObtenerHabitacionesDisponibles();
+
+            return View(listaHabitacionesDisponibles);
+        }
+
+        // GET: Reservaciones/BuscarReserva/5
+        public ActionResult BuscarReserva(int id)
+        {
+            ReservacionesDto ReservaExistente = _buscarReserva.BuscarReserva(id);
+            return View(ReservaExistente);
+        }
+
+        // GET: Reservaciones/CrearReserva
+        public ActionResult CrearReserva()
         {
             return View();
         }
 
-        // GET: Reservaciones/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Reservaciones/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Reservaciones/Create
+        // POST: Reservaciones/CrearReserva
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CrearReserva(FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Reservaciones/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Reservaciones/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Reservaciones/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Reservaciones/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
 
                 return RedirectToAction("Index");
             }

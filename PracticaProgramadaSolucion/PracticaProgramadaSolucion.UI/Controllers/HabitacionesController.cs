@@ -1,6 +1,9 @@
 ﻿using PracticaProgramadaSolucion.Abstracciones.LogicaDeNegocio.Habitaciones;
 using PracticaProgramadaSolucion.Abstracciones.Modulos.Habitaciones;
+using PracticaProgramadaSolucion.Abstracciones.Modulos.Reservaciones;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.EditarHabitaciones;
+using PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.ObtenerHabitacionesPorID;
+using PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.ObtenerHistorialDeReservas;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.ObtenerTodasLasHabitaciones;
 using PracticaProgramadaSolucion.LogicaDeNegocio.Habitaciones.RegistrarHabitaciones;
 using System;
@@ -16,12 +19,16 @@ namespace PracticaProgramadaSolucion.UI.Controllers
         IObtenerTodasLasHabitacionesLN _obtenerTodasLasHabitaciones;
         IRegistrarHabitacionesLN _registrarHabitaciones;
         IEditarHabitacionesLN _editarHabitaciones;
+        IObtenerHabitacionesPorIDLN _obtenerHabitacionesPorID;
+        IObtenerHistorialDeReservasLN _obtenerHistorialDeReservas;
 
         public HabitacionesController()
         {
             _obtenerTodasLasHabitaciones = new ObtenerTodasLasHabitacionesLN();
             _registrarHabitaciones = new RegistrarHabitacionesLN();
             _editarHabitaciones = new EditarHabitacionesLN();
+            _obtenerHabitacionesPorID = new ObtenerHabitacionesPorIDLN();
+            _obtenerHistorialDeReservas = new ObtenerHistorialDeReservasLN();
         }
 
         // GET: Habitaciones
@@ -72,19 +79,13 @@ namespace PracticaProgramadaSolucion.UI.Controllers
         // GET: Habitaciones/Edit/5
         public ActionResult EditarHabitaciones(int id)
         {
-            try
-            {
-                return View();
-            }
-            catch
-            {
-                return View();
-            }
+            HabitacionesDto laHabitacionAEditar = _obtenerHabitacionesPorID.Obtener(id);
+            return View(laHabitacionAEditar);
         }
 
         // POST: Habitaciones/Edit/5
         [HttpPost]
-        public ActionResult EditarHabitaciones(HabitacionesDto laHabitacionAEditar)
+        public ActionResult EditarHabitaciones(int id, HabitacionesDto laHabitacionAEditar)
         {
             try
             {
@@ -103,6 +104,13 @@ namespace PracticaProgramadaSolucion.UI.Controllers
             {
                 return View();
             }
+        }
+
+        // GET: ReservaAdministrativa
+        public ActionResult ObtenerHistorialDeReservas(int id)
+        {
+            List<ReservacionesDto> listaReservaciones = _obtenerHistorialDeReservas.Obtener(id);
+            return View(listaReservaciones);
         }
     }
 }
